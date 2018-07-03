@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.1.1] - 2018-07-03
+### Chnaged
+- Corrected a typo in the classname of siteHeader
+
 ## [0.1.0] - 2018-06-26
 ### Added
 - Basic folder structure
