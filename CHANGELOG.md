@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.2.0] - 2018-07-24
 ### Added
 - Support for .env configuration
-- environmental variables file for dev: `devvars.env`
+- environmental variables file for dev: `.env`
 
 ### Changed
 - NPM dev script changed to utilize dotenv
