@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.2.0] - 2018-07-24
+### Added
+- Support for .env configuration
+- environmental variables file for dev: `devvars.env`
+
+### Changed
+- NPM dev script changed to utilize dotenv
+- Database configuration now uses dotenv variables
+- Port is now set through dotenv variables
+
 ## [0.1.1] - 2018-07-03
 ### Chnaged
 - Corrected a typo in the classname of siteHeader

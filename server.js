@@ -9,7 +9,7 @@ const session = require('express-session');
 const logger = require('morgan');
 const bcrypt = require('bcrypt');
 const fs = require('fs');
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 const options = {
 	'key': fs.readFileSync('ssl/localhost-privkey.pem'),
 	'cert': fs.readFileSync('ssl/localhost-cert.pem')
@@ -42,10 +42,10 @@ app.use(logger('dev'));						// Setup console logging of route events
 
 // Setup database connection
 const db = mysql2.createConnection({
-	'host': 'localhost',
-	'user': 'root',
-	'password': 'root',
-	'database': 'kodebase'
+	'host': process.env.DB_HOST,
+	'user': process.env.DB_USER,
+	'password': process.env.DB_PSWD,
+	'database': process.env.DB_DTBS
 });
 
 // ROUTES
