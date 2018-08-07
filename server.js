@@ -10,6 +10,7 @@ const logger = require('morgan');
 const bcrypt = require('bcrypt');
 const fs = require('fs');
 const port = process.env.PORT || 3000;
+const debug = require('debug')('kodebase');
 const options = {
 	'key': fs.readFileSync('ssl/localhost-privkey.pem'),
 	'cert': fs.readFileSync('ssl/localhost-cert.pem')
@@ -51,23 +52,23 @@ const db = mysql2.createConnection({
 // ROUTES
 // ============================================================================
 app.get('/', (req, res) => {
-	res.render('page', { 'title': 'Hello, World!' });
+	res.render('page', { 'title': 'Hello, World!', 'content': `It's nice to meet you :-)` });
 });
 
 app.use((req, res) => {
 	res.status(404);
-	res.render('404', { 'title': '404: Not Found' });
+	res.render('page', { 'title': '404: Not Found', 'content': error });
 });
 
 app.use((error, req, res, next) => {
 	res.status(500);
-	res.render('500', { 'title': '500: Internal Server Error' });
+	res.render('page', { 'title': '500: Internal Server Error', 'content': error });
 });
 
 // SERVER INIT
 // ============================================================================
 spdy.createServer(options, app).listen(port, () => {
-	process.stdout.write(
-		`\x1b[36m${pjson.name} v${pjson.version}\x1b[0m is running on \x1b[36mhttps://localhost:${port}\x1b[0m\n`
+	debug(
+		`${pjson.name} v${pjson.version} is running on https://${process.env.SITE_HOST}:${port}`
 	);
 });

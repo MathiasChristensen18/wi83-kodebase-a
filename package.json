@@ -4,8 +4,10 @@
   "description": "Basal kodebase til begynderprojekter med nodejs, express og myql2",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "dev": "nodemon -r dotenv/config server.js dotenv_config_path=./.env",
+    "start": "node -r dotenv/config server.js dotenv_config_path=./.env",
+    "dev": "run-script-os",
+    "dev:win32": "set DEBUG:kodebase nodemon -r dotenv/config server.js dotenv_config_path=./.env",
+    "dev:linux": "DEBUG=kodebase nodemon -r dotenv/config server.js dotenv_config_path=./.env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +21,7 @@
   },
   "homepage": "https://github.com/rts-cmk/wi83-kodebase-a#readme",
   "dependencies": {
-    "bcrypt": "^2.0.1",
+    "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
     "ejs": "^2.6.1",
@@ -30,6 +32,8 @@
     "spdy": "^3.4.7"
   },
   "devDependencies": {
-    "nodemon": "^1.17.5"
+    "debug": "^3.1.0",
+    "nodemon": "^1.17.5",
+    "run-script-os": "^1.0.3"
   }
 }

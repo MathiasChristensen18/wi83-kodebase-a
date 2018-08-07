@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [x.x.x]
+## Added
+- Debug library for dev mode debug toggling
+- run-script-os library for OS specific npm scripts
+- favicon to shut up the console error log
+
+## Removed
+- Views for errorpages 404 and 500. Why? Because they are essentially the same as the view for page
+
+## Changed
+- Page view now includes content as well as heading level 1 (title)
+- Example routes now include content
+- OS specific startup scripts (win32 and linux)
+- Readme file updated with debug info, .env instructions, and startup script instructions
+
 ## [0.2.0] - 2018-07-24
 ### Added
 - Support for .env configuration
