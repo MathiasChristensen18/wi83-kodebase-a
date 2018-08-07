@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [x.x.x]
+## [0.3.0] - 2018-08-07
 ## Added
 - Debug library for dev mode debug toggling
 - run-script-os library for OS specific npm scripts
