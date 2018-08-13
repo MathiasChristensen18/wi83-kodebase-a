@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.3.1] - 2018-08-13
+## Changed
+- Mysql2 con nection changed to mysql-pool, because conection temination is automatic with mysql
+
 ## [0.3.0] - 2018-08-07
 ## Added
 - Debug library for dev mode debug toggling

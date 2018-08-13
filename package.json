@@ -28,7 +28,7 @@
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "morgan": "^1.9.0",
-    "mysql2": "^1.5.3",
+    "mysql": "^2.16.0",
     "spdy": "^3.4.7"
   },
   "devDependencies": {

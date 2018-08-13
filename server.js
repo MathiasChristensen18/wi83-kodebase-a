@@ -3,7 +3,7 @@
 const express = require('express');
 const spdy = require('spdy');
 const pjson = require('./package.json');
-const mysql2 = require('mysql2');
+const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const logger = require('morgan');
@@ -42,7 +42,8 @@ app.use(session({
 app.use(logger('dev'));						// Setup console logging of route events
 
 // Setup database connection
-const db = mysql2.createConnection({
+const db = mysql.createPool({
+	'connectionLimit': 10,
 	'host': process.env.DB_HOST,
 	'user': process.env.DB_USER,
 	'password': process.env.DB_PSWD,
