@@ -1,6 +1,6 @@
 {
   "name": "wi83-kodebase-a",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Basal kodebase til begynderprojekter med nodejs, express og myql2",
   "main": "server.js",
   "scripts": {
