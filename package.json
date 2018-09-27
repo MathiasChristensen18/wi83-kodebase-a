@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node -r dotenv/config server.js dotenv_config_path=./.env",
     "dev": "run-script-os",
-    "dev:win32": "set DEBUG:kodebase nodemon -r dotenv/config server.js dotenv_config_path=./.env",
+    "dev:win32": "set DEBUG=kodebase & nodemon -r dotenv/config server.js dotenv_config_path=./.env",
     "dev:linux": "DEBUG=kodebase nodemon -r dotenv/config server.js dotenv_config_path=./.env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
