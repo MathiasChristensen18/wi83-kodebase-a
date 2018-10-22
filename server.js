@@ -56,9 +56,47 @@ app.get('/', (req, res) => {
 	res.render('page', { 'title': 'Hello, World!', 'content': `It's nice to meet you :-)` });
 });
 
+app.get('/login', (req, res) => {
+	res.render('login', { 'title': 'Log in'});
+});
+
+app.post('/login', (req, res) => {
+	db.query(`SELECT id FROM users WHERE username = ? AND passphrase = ?`, [req.body.username, req.body.passphrase], (err, result) => {
+		if (err) return res.send(err);
+		if (result.length === 1) {
+			req.session.user = result[0].id;
+			res.redirect('/admin');
+		} else {
+			res.redirect('/login');
+		}
+	});
+});
+
+app.get('/logout', (req, res) => {
+	req.session.destroy();
+	res.redirect('/');
+});
+
+app.use('/admin', (req, res, next) => {
+	if (!req.session.user) {
+		res.redirect('/login');
+		return;
+	} else {
+		next();
+	}
+});
+
+app.get('/admin', (req, res) => {
+	res.render('page', { 'title': 'Admin', 'content': 'Super secret page!!' });
+});
+
+app.get('/admin/pages', (req, res) => {
+	res.render('page', { 'title': 'Admin Pages', 'content': 'Another super secret page!!' });
+});
+
 app.use((req, res) => {
 	res.status(404);
-	res.render('page', { 'title': '404: Not Found', 'content': error });
+	res.render('page', { 'title': '404: Not Found', 'content': 'Page not found' });
 });
 
 app.use((error, req, res, next) => {
