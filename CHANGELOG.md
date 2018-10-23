@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.4.4] - 2018-10-23
+### Changed
+- Changed how session secret loads, now with fallback
+
 ## [0.4.3] - 2018-10-23
 ### Added
 - Run script support for MacOS (darwin)

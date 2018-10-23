@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({
 app.use(session({
 	'resave': false,
 	'saveUninitialized': true,
-	'secret': process.env.SESSION_SECRET
+	'secret': process.env.SESSION_SECRET || 'blowfishsecret'
 }));
 
 app.use(logger('dev'));						// Setup console logging of route events
