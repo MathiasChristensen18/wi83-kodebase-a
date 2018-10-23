@@ -32,6 +32,8 @@ DB_DTBS=kodebase
 
 PORT=1337
 SITE_HOST=localhost
+
+SESSION_SECRET=blowfishsecret
 ```
 
 ## Debug

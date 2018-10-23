@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({
 app.use(session({
 	'resave': false,
 	'saveUninitialized': true,
-	'secret': 'really secret stuffs'
+	'secret': process.env.SESSION_SECRET
 }));
 
 app.use(logger('dev'));						// Setup console logging of route events
