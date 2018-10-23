@@ -1,20 +1,14 @@
 // IMPORTS
 // ============================================================================
 const express = require('express');
-const spdy = require('spdy');
 const pjson = require('./package.json');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const logger = require('morgan');
 const bcrypt = require('bcrypt');
-const fs = require('fs');
 const port = process.env.PORT || 3000;
 const debug = require('debug')('kodebase');
-const options = {
-	'key': fs.readFileSync('ssl/localhost-privkey.pem'),
-	'cert': fs.readFileSync('ssl/localhost-cert.pem')
-};
 
 // SERVER
 // ============================================================================
@@ -56,20 +50,23 @@ app.get('/', (req, res) => {
 	res.render('page', { 'title': 'Hello, World!', 'content': `It's nice to meet you :-)` });
 });
 
+// Error page 404
 app.use((req, res) => {
 	res.status(404);
-	res.render('page', { 'title': '404: Not Found', 'content': error });
+	res.render('page', { 'title': '404: Not Found', 'content': 'The page you are looking for does not exist.' });
 });
 
+// Error page 500
 app.use((error, req, res, next) => {
 	res.status(500);
-	res.render('page', { 'title': '500: Internal Server Error', 'content': error });
+	res.render('page', { 'title': '500: Internal Server Error', 'content': 'Something went wrong on your server. Check your console log.' });
+	debug(error);
 });
 
 // SERVER INIT
 // ============================================================================
-spdy.createServer(options, app).listen(port, () => {
+app.listen(port, () => {
 	debug(
-		`${pjson.name} v${pjson.version} is running on https://${process.env.SITE_HOST}:${port}`
+		`${pjson.name} v${pjson.version} is running on http://${process.env.SITE_HOST}:${port}`
 	);
 });

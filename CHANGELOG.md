@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.4.0] - 2018-10-23
+### Changed
+- Error pages changed to not include the specific error. Error logs have been moved to the console.
+
+### Removed
+- spdy and SSL certificates due to unstable page refresh causing server to crash
+
 ## [0.3.1] - 2018-08-13
 ## Changed
 - Mysql2 con nection changed to mysql-pool, because conection temination is automatic with mysql
