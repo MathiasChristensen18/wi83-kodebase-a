@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.4.2] - 2018-10-23
+### Changed
+- Proper favicon
+
 ## [0.4.1] - 2018-10-23
 ### Changed
 - Moved session secret to .env file
