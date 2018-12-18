@@ -70,7 +70,7 @@ app.use((error, req, res, next) => {
 });
 
 app.use(logErrors({
-	'path': './logs',
+	'path': './logs/foo/bar',
 	'logName': 'errors.log'
 }));
 

@@ -27,7 +27,7 @@
     "dotenv": "^6.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "express-log-errors": "^1.0.5",
+    "express-log-errors": "^1.1.0",
     "express-session": "^1.15.6",
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
